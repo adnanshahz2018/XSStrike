@@ -54,10 +54,10 @@ parser.add_argument('--json', help='treat post data as json',
                     dest='jsonData', action='store_true')
 parser.add_argument('--path', help='inject payloads in the path',
                     dest='path', action='store_true')
-parser.add_argument(
-    '--seeds', help='load crawling seeds from a file', dest='args_seeds')
-parser.add_argument(
-    '-f', '--file', help='load payloads from a file', dest='args_file')
+parser.add_argument('--seeds', help='load crawling seeds from a file', 
+                    dest='args_seeds')
+parser.add_argument('-f', '--file', help='load payloads from a file', 
+                    dest='args_file')
 parser.add_argument('-l', '--level', help='level of crawling',
                     dest='level', type=int, default=2)
 parser.add_argument('--headers', help='add headers',
@@ -106,9 +106,7 @@ blindXSS = args.blindXSS
 core.log.console_log_level = args.console_log_level
 core.log.file_log_level = args.file_log_level
 core.log.log_file = args.log_file
-
 logger = core.log.setup_logger()
-
 core.config.globalVariables = vars(args)
 
 # Import everything else required from core lib
